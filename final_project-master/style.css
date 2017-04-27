@@ -8,6 +8,119 @@
     font-size: 55px;
 }
 /*STAMP css*/
+body{
+  background-color: green;
+}
+#STAMPtitle {
+    position: absolute;
+    left: 460px;
+    top: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#images {
+    position: absolute;
+    left: 1120px;
+    top: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#gifs {
+    position: absolute;
+    left: 1140px;
+    top: 250px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#STAMPcanvasID {
+    border-style: solid;
+    border-width: 10px;
+  background-color: white;
+}
+#re {
+    position: absolute;
+    left: 1140px;
+    top: 550px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#shrek {
+    position: absolute;
+    left: 1140px;
+    top: 100px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#cage {
+    position: absolute;
+    left: 1140px;
+    top: 150px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#dk {
+    position: absolute;
+    left: 1140px;
+    top: 200px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#bond {
+    position: absolute;
+    left: 1140px;
+    top: 350px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#plums {
+    position: absolute;
+    left: 1140px;
+    top: 450px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#tinyhands {
+    position: absolute;
+    left: 1140px;
+    top: 400px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#plusr {
+    position: absolute;
+    left: 790px;
+    top: 550px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#minusr {
+    position: absolute;
+    left: 60px;
+    top: 550px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#erase {
+    position: absolute;
+    left: 1160px;
+    top: 480px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+.noselect {
+    -webkit-user-select: none; 
+}
+
 
 /*DOTS css*/
 

@@ -2,12 +2,14 @@ var namespace = "http://www.w3.org/2000/svg"
 var cheese = 1
 // Write your code here!
 //hide all variables except HUB
-var scoreLabel = makeText("HUBcanvasID", "0", 60, 32, 30, "VT323", "black", 1)
+var scoreLabel = makeText("STAMPcanvasID", "0", 0, 32, 60, "VT323", "black", 1)
 var score = 0
+document.getElementById("scorelabel").setAttribute("style", "display: none;")
 //for stamp
 function runSTAMP(){
       score = score + 1
   scoreLabel.innerHTML = score
+  document.getElementById("scorelabel").setAttribute("style", "display: block;")
 }
 //for game
 function runGAME(){
