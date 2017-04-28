@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body id="hubbody">
 <!--      HUB HTML-->
     <h1 id="HUBtitle">HUB</h1>
    <nav>
-    <a class="navigator" href="dots.html" title="Page 2" onclick="runDOTS">DOTS</a>
-    <a class="navigator" href="game.html" title="Page 3" onclick="runGAME">GAME</a>
-    <a class="navigator" href="stamp.html" title="Page 4" onclick="runSTAMP">STAMP</a>
+    <a id="dotsnav" class="navigator" href="dots.html" title="Page 2" onclick="changecolorDOTS()">DOTS</a>
+    <a id="gamenav"class="navigator" href="game.html" title="Page 3" onclick="changecolorGAME()">GAME</a>
+    <a id="stampnav"class="navigator" href="stamp.html" title="Page 4" onclick="changecolorSTAMP()">STAMP</a>
   </nav>
       
       <svg id="HUBcanvasID" width="1000" height="600" >

@@ -4,11 +4,24 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body id="dotsbody">
    <nav>
-    <a class="navigator" href="index.html" title="Page 1">BACK</a>
+    <a id="back" class="navigator" href="index.html" title="Page 1">BACK</a>
   </nav>
-      
+      <h1 id="DOTStitle" class="noselect">DOTS</h1>
+<h1 id="settings" class="noselect">SETTINGS</h1>
+<svg id="DOTScanvasID" class="noselect" onclick="showCoords(event)" onmousemove="showCoords(event)" onmousedown="downclick()" onmouseup="upclick()" width="1000" height="600" >
+</svg>
+<button onclick="reload()" class="noselect" id="re">reset</button>
+<button onclick="changetoblack()" id="black" class="noselect">black</button>
+<button onclick="changetored()" id="red" class="noselect">red</button>
+<button onclick="changetogreen()" id="green" class="noselect">green</button>
+<button onclick="changetoblue()" id="blue" class="noselect">blue</button>
+<button onclick="changetotan()" id="tan" class="noselect">tan</button>
+<button onclick="changetobrown()" id="brown" class="noselect">brown</button>
+<button onclick="minusr()" id="minusr" class="noselect">smaller dot</button>
+<button onclick="plusr()" id="plusr" class="noselect">bigger dot</button>
+<button onclick="white()" id="erase" class="noselect">erase</button>
     <script src="final_project.js"></script>   
   </body>
 </html>

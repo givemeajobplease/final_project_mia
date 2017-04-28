@@ -2,15 +2,67 @@ var namespace = "http://www.w3.org/2000/svg"
 var cheese = 1
 // Write your code here!
 //hide all variables except HUB
-var scoreLabel = makeText("STAMPcanvasID", "0", 0, 32, 60, "VT323", "black", 1)
-var score = 0
-document.getElementById("scorelabel").setAttribute("style", "display: none;")
+
+
 //for stamp
-function runSTAMP(){
-      score = score + 1
-  scoreLabel.innerHTML = score
-  document.getElementById("scorelabel").setAttribute("style", "display: block;")
+function changecolorSTAMP(){
+    document.querySelector("body").setAttribute("style", "background-color: lightgreen;")
 }
+var namespace = "http://www.w3.org/2000/svg"
+ var STAMPcanvas = document.getElementById("STAMPcanvasID")
+var STAMPblackclick = "false"
+var STAMPredclick = "true"
+var STAMPimage = "http://www.pngmart.com/files/3/Shrek-PNG-HD.png"
+var mousedown = false
+var STAMPheight = 100
+var STAMPwidth = 100
+function STAMPdownclick(){
+  mousedown = true
+}
+function STAMPupclick(){
+  mousedown = false
+}
+function STAMPshowCoords(event) {
+  if (mousedown == true){
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+   var img = makeImage("STAMPcanvasID", STAMPimage, x, y, STAMPwidth, STAMPheight, 1)
+  }
+}
+function STAMPreload(){
+  location.reload();
+}
+function  shrek(){
+STAMPimage = "http://www.pngmart.com/files/3/Shrek-PNG-HD.png"
+}
+function  cage(){
+STAMPimage = "https://mysocallednetflix.files.wordpress.com/2014/06/nick.png"
+}
+function  dk(){
+STAMPimage = "http://vignette3.wikia.nocookie.net/p__/images/9/97/DKISWii.png/revision/latest?cb=20140820022031&path-prefix=protagonist"
+}
+function  bond(){
+STAMPimage = "http://i1.kym-cdn.com/photos/images/original/000/677/034/0f7.gif"
+}
+function plums(){
+  STAMPimage = "https://media.tenor.co/images/1f8594fc9eb6352bd4284b6439179e04/raw"
+}
+function tinyhands(){
+  STAMPimage = "https://i2.wp.com/fusion.net/wp-content/uploads/2016/03/cannotunsee6.gif?resize=500%2C500&quality=80&strip=all"
+}
+function  white(){
+paint = "white"
+}
+function  STAMPminussize(){
+STAMPwidth = STAMPwidth-13
+STAMPheight = STAMPheight-13
+}
+function  STAMPplussize(){
+STAMPwidth = STAMPwidth+13
+STAMPheight = STAMPheight+13
+}
+
 //for game
 function runGAME(){
       score = score + 1
@@ -19,9 +71,65 @@ function runGAME(){
 
 
 //for dots
-function runDOTS(){
-      score = score + 1
-  scoreLabel.innerHTML = score
+function changecolorDOTS(){
+    document.querySelector("body").setAttribute("style", "background-color: lightpink;")
+}
+var namespace = "http://www.w3.org/2000/svg"
+ var DOTScanvas = document.getElementById("DOTScanvasID")
+var blackclick = "false"
+var redclick = "true"
+var DOTSpaint = "red"
+var DOTSradius = 15
+var mousedown = false
+function downclick(){
+  mousedown = true
+}
+function upclick(){
+  mousedown = false
+}
+function showCoords(event) {
+  if (mousedown == true){
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+   var redcircle = document.createElementNS(namespace, "circle")
+ redcircle.setAttribute("cx", x)
+ redcircle.setAttribute("cy", y)
+ redcircle.setAttribute("r", DOTSradius)
+ redcircle.setAttribute("fill", DOTSpaint )
+ redcircle.setAttribute("id", "redcircle")
+ DOTScanvas.appendChild(redcircle)
+  }
+}
+function reload(){
+  location.reload();
+}
+function  changetoblack(){
+DOTSpaint = "black"
+}
+function  changetored(){
+DOTSpaint = "red"
+}
+function  changetogreen(){
+DOTSpaint = "green"
+}
+function  changetotan(){
+DOTSpaint = "tan"
+}
+function  changetoblue(){
+DOTSpaint = "blue"
+}
+function  changetobrown(){
+DOTSpaint = "#973310"
+}
+function  white(){
+DOTSpaint = "white"
+}
+function  minusr(){
+DOTSradius = DOTSradius-13
+}
+function  plusr(){
+DOTSradius = DOTSradius+13
 }
 
 
@@ -264,8 +372,7 @@ function move(shape, dx, dy) {
     setY(shape, y1 + dy)
   }
 }
-
-function makeCircle(cx, cy, r, fill, opacity) {
+function makeCircle(canvasID, cx, cy, r, fill, opacity) {
   var circle = document.createElementNS(namespace, "circle")
   circle.setAttribute("cx", cx)
   circle.setAttribute("cy", cy)
@@ -273,12 +380,12 @@ function makeCircle(cx, cy, r, fill, opacity) {
   circle.setAttribute("fill", fill)
   circle.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(circle)
   return circle
 }
 
-function makeRect(x, y, width, height, fill, opacity) {
+function makeRect(canvasID, x, y, width, height, fill, opacity) {
   var rect = document.createElementNS(namespace, "rect")
   rect.setAttribute("x", x)
   rect.setAttribute("y", y)
@@ -287,12 +394,12 @@ function makeRect(x, y, width, height, fill, opacity) {
   rect.setAttribute("fill", fill)
   rect.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(rect)
   return rect
 }
 
-function makeEllipse(cx, cy, rx, ry, fill, opacity) {
+function makeEllipse(canvasID, cx, cy, rx, ry, fill, opacity) {
   var ellipse = document.createElementNS(namespace, "ellipse")
   ellipse.setAttribute("cx", cx)
   ellipse.setAttribute("cy", cy)
@@ -301,12 +408,12 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(ellipse)
   return ellipse
 }
 
-function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
+function makeLine(canvasID, x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   var line = document.createElementNS(namespace, "line")
   line.setAttribute("x1", x1)
   line.setAttribute("y1", y1)
@@ -316,12 +423,12 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(line)
   return line
 }
 
-function makePolyline(points, stroke, strokeWidth, opacity) {
+function makePolyline(canvasID, points, stroke, strokeWidth, opacity) {
   var polyline = document.createElementNS(namespace, "polyline")
   polyline.setAttribute("points", points)
   polyline.setAttribute("stroke", stroke)
@@ -329,23 +436,23 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(polyline)
   return polyline
 }
 
-function makePolygon(points, fill, opacity) {
+function makePolygon(canvasID, points, fill, opacity) {
   var polygon = document.createElementNS(namespace, "polygon")
   polygon.setAttribute("points", points)
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
   
   var canvas = document.getElementById("canvas")
-  canvas.appendChild(polygon)
+  canvas.appendChild(canvasID)
   return polygon
 }
 
-function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
+function makeText(canvasID, message, x, y, fontSize, fontFamily, fill, opacity) {
   var text = document.createElementNS(namespace, "text")
   text.innerHTML = message
   text.setAttribute("x", x)
@@ -355,12 +462,12 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(text)
   return text
 }
 
-function makeImage(url, x, y, width, height, opacity) {
+function makeImage(canvasID, url, x, y, width, height, opacity) {
   var image = document.createElementNS(namespace, "image")
   image.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", url)
   image.setAttribute("x", x)
@@ -369,7 +476,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(canvasID)
   canvas.appendChild(image)
   return image
 }

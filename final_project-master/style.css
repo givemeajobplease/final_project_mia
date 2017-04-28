@@ -7,9 +7,38 @@
     font-family: 'VT323', monospace;
     font-size: 55px;
 }
+#hubbody{
+background-color: coral;
+}
+#dotsnav{
+    position: absolute;
+    left: 360px;
+    top: 200px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+}
+#gamenav{
+    position: absolute;
+    left: 640px;
+    top: 200px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+}
+#stampnav{
+    position: absolute;
+    left: 935px;
+    top: 200px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+}
+#back{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+}
+
 /*STAMP css*/
-body{
-  background-color: green;
+#stampbody{
+background-color: lightgreen;
 }
 #STAMPtitle {
     position: absolute;
@@ -122,7 +151,133 @@ body{
 }
 
 
+
 /*DOTS css*/
+#dotsbody{
+background-color: lightpink;
+}
+#DOTStitle {
+    position: absolute;
+    left: 460px;
+    top: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#settings {
+    position: absolute;
+    left: 1120px;
+    top: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#DOTScanvasID {
+    border-style: solid;
+    border-width: 10px;
+  background-color: white;
+}
+#re {
+    position: absolute;
+    left: 1160px;
+    top: 550px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#black {
+    position: absolute;
+    left: 1160px;
+    top: 150px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#red {
+    position: absolute;
+    left: 1160px;
+    top: 200px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#green {
+    position: absolute;
+    left: 1160px;
+    top: 250px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#blue {
+    position: absolute;
+    left: 1160px;
+    top: 300px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#tan {
+    position: absolute;
+    left: 1160px;
+    top: 350px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#brown {
+    position: absolute;
+    left: 1160px;
+    top: 400px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#plusr {
+    position: absolute;
+    left: 790px;
+    top: 550px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#minusr {
+    position: absolute;
+    left: 60px;
+    top: 550px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+#erase {
+    position: absolute;
+    left: 1160px;
+    top: 480px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  color: #A981B2;
+}
+.noselect {
+    -webkit-user-select: none; 
+}
+#black:hover { 
+    background-color: black;
+}
+#red:hover { 
+    background-color: red;
+}
+#green:hover { 
+    background-color: green;
+}
+#blue:hover { 
+    background-color: blue;
+}
+#tan:hover { 
+    background-color: tan;
+}
+#brown:hover { 
+    background-color: #973310;
+}
+
+
 
 /*GAME css*/
 
