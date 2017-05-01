@@ -49,7 +49,7 @@ function plums(){
   STAMPimage = "https://media.tenor.co/images/1f8594fc9eb6352bd4284b6439179e04/raw"
 }
 function tinyhands(){
-  STAMPimage = "https://i2.wp.com/fusion.net/wp-content/uploads/2016/03/cannotunsee6.gif?resize=500%2C500&quality=80&strip=all"
+  STAMPimage = "https://m.popkey.co/66c6cc/MwxN3_s-200x150.gif"
 }
 function  white(){
 paint = "white"
@@ -64,10 +64,133 @@ STAMPheight = STAMPheight+13
 }
 
 //for game
-function runGAME(){
-      score = score + 1
-  scoreLabel.innerHTML = score
+function changecolorGAME(){
+    document.querySelector("body").setAttribute("style", "background-color: black;")
 }
+var namespace = "http://www.w3.org/2000/svg"
+ var GAMEcanvas = document.getElementById("DOTScanvasID")
+var ob1 = makeRect(GAMEcanvas, 100, 170, 30, 70, "#3D3D3D", 1)
+var ob2 = makeRect(GAMEcanvas, 30, 0, 30, 70, "#3D3D3D", 1)
+var ob3 = makeRect(GAMEcanvas, 220, 130, 30, 100, "#3D3D3D", 1)
+var ob4 = makeRect(GAMEcanvas, 250, 0, 30, 50, "#3D3D3D", 1)
+var ob5 = makeRect(GAMEcanvas, 150, 0, 30, 90, "#3D3D3D", 1)
+var startscreen = makeRect(0,0,1500,600, "black", 1)
+var turnedoff = "false"
+
+  var chara = makeImage(GAMEcanvas, "http://www.clipartbest.com/cliparts/pT5/6o6/pT56o6M8c.gif", 0, 170, 30, 30, 1)
+  chara.setAttribute("display", "none")
+  document.getElementById("directions").setAttribute("style", "display: inline;")
+document.getElementById("endbutton").setAttribute("style", "display: none;")
+document.getElementById("gameover").setAttribute("style", "display: none;")
+function starttime(){
+  startscreen.setAttribute("fill", "none")
+  mainloop()
+}
+  
+function mainloop(){
+  var timerepeated = 1
+chara.setAttribute("display", "inline")
+document.getElementById("title").setAttribute("style", "display: none;")
+  document.getElementById("directions").setAttribute("style", "display: none;")
+var ob1x = getX(ob1)
+var ob2x = getX(ob2)
+var ob3x = getX(ob3)
+var ob4x = getX(ob4)
+var ob5x = getX(ob5)
+var charactery = getY(chara)
+  document.getElementById("startbutton").setAttribute("style", "display: none;")
+  move(ob1, -3, 0)
+  move(ob2, -3, 0)
+  move(ob3, -3, 0)
+  move(ob4, -3, 0)
+  move(ob5, -3, 0)
+  
+  if (ob1x < -30){
+    setX(ob1, 350)
+    updateScore()
+  }
+  if (ob2x < -30){
+    setX(ob2, 350)
+    updateScore()
+  }
+  if (ob3x < -30){
+    setX(ob3, 350)
+    updateScore()
+  }
+  if (ob4x < -30){
+    setX(ob4, 350)
+    updateScore()
+  }
+  if (ob5x < -30){
+    setX(ob5, 350)
+    updateScore()
+  }
+  if (charactery > 0){
+    setTimeout(function(){ move(chara, 0,.5); }, 1000);
+  }else{
+    
+  }
+  if (collides(chara, ob1)){
+   turnoff()
+  }
+    if (collides(chara, ob2)){
+    turnoff()
+  }
+    if (collides(chara, ob3)){
+    turnoff()
+  }
+    if (collides(chara, ob4)){
+    turnoff()
+  }
+    if (collides(chara, ob5)){
+   turnoff()
+  }
+  
+  requestAnimationFrame(mainloop)
+}
+
+addEventListener("keydown", jump)
+
+function jump(event) {
+ if (event.key == "w") {
+   move(chara, 0, -15)
+ }
+}
+function turnoff(){
+  startscreen.setAttribute("style", "fill: red;")
+document.getElementById("endbutton").setAttribute("style", "display: inline;")
+document.getElementById("gameover").setAttribute("style", "display: inline;")
+ chara.setAttribute("opacity", "0")
+  // text settings
+  if (score < 10){
+scoreLabel.setAttribute("x", "148")
+  }
+    else if (score < 100){
+scoreLabel.setAttribute("x", "140")
+  }
+  else if (score < 1000){
+scoreLabel.setAttribute("x", "135")
+  }
+scoreLabel.setAttribute("y", "70")
+document.getElementById("scorelabel").setAttribute("style", "display: none;")
+  
+  //variable
+  turnedoff = "true"
+}
+var scoreLabel = makeText("0", 60, 32, 30, "VT323", "black", 1)
+var score = 0
+
+function updateScore() { 
+  if (turnedoff == "false"){
+  score = score + 1
+  scoreLabel.innerHTML = score
+  }
+}
+function  resetgame(){
+  location.reload()
+}
+
+
 
 
 //for dots

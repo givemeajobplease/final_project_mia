@@ -280,4 +280,77 @@ background-color: lightpink;
 
 
 /*GAME css*/
+  background: gray;
+}
 
+svg {
+  background-image: url("http://www.qotile.net/gif/static2.gif");
+  display: block;
+  margin: auto;
+}
+#startbutton{
+  position: absolute;
+  left: 640px;
+  top: 205px;
+  background-color: lightgray; 
+    border: ;
+  border-color: gray;
+  border-radius: 25px;
+    color: black;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+  font-family: 'VT323', monospace;
+}
+#scorelabel{
+      font-family: 'VT323', monospace;
+      position: absolute;
+    left: 250px;
+    top: 0px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#title{
+      font-family: 'VT323', monospace;
+      position: absolute;
+  color: white;
+    left: 655px;
+    top: 0px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#gameover{
+      font-family: 'VT323', monospace;
+      position: absolute;
+  color: white;
+    left: 600px;
+    top: 0px;
+    font-family: 'VT323', monospace;
+    font-size: 55px;
+}
+#endbutton{
+  position: absolute;
+  left: 630px;
+  top: 300px;
+  background-color: lightgray; 
+    border: ;
+  border-color: gray;
+  border-radius: 25px;
+    color: black;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+  font-family: 'VT323', monospace;
+}
+#directions{
+      font-family: 'VT323', monospace;
+      position: absolute;
+  color: white;
+    left: 435px;
+    top: 340px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+  text-align: center;
+}
