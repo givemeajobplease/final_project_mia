@@ -68,16 +68,16 @@ function changecolorGAME(){
     document.querySelector("body").setAttribute("style", "background-color: black;")
 }
 var namespace = "http://www.w3.org/2000/svg"
- var GAMEcanvas = document.getElementById("DOTScanvasID")
-var ob1 = makeRect(GAMEcanvas, 100, 170, 30, 70, "#3D3D3D", 1)
-var ob2 = makeRect(GAMEcanvas, 30, 0, 30, 70, "#3D3D3D", 1)
-var ob3 = makeRect(GAMEcanvas, 220, 130, 30, 100, "#3D3D3D", 1)
-var ob4 = makeRect(GAMEcanvas, 250, 0, 30, 50, "#3D3D3D", 1)
-var ob5 = makeRect(GAMEcanvas, 150, 0, 30, 90, "#3D3D3D", 1)
-var startscreen = makeRect(0,0,1500,600, "black", 1)
+ var GAMEcanvas = document.getElementById("GAMEcanvasID")
+var ob1 = makeRect("GAMEcanvasID", 100, 170, 30, 70, "#3D3D3D", 1)
+var ob2 = makeRect("GAMEcanvasID", 30, 0, 30, 70, "#3D3D3D", 1)
+var ob3 = makeRect("GAMEcanvasID", 220, 130, 30, 100, "#3D3D3D", 1)
+var ob4 = makeRect("GAMEcanvasID", 250, 0, 30, 50, "#3D3D3D", 1)
+var ob5 = makeRect("GAMEcanvasID", 150, 0, 30, 90, "#3D3D3D", 1)
+var startscreen = makeRect("GAMEcanvasID", 0,0,1500,600, "black", 1)
 var turnedoff = "false"
 
-  var chara = makeImage(GAMEcanvas, "http://www.clipartbest.com/cliparts/pT5/6o6/pT56o6M8c.gif", 0, 170, 30, 30, 1)
+  var chara = makeImage("GAMEcanvasID", "http://www.clipartbest.com/cliparts/pT5/6o6/pT56o6M8c.gif", 0, 170, 30, 30, 1)
   chara.setAttribute("display", "none")
   document.getElementById("directions").setAttribute("style", "display: inline;")
 document.getElementById("endbutton").setAttribute("style", "display: none;")
@@ -177,7 +177,7 @@ document.getElementById("scorelabel").setAttribute("style", "display: none;")
   //variable
   turnedoff = "true"
 }
-var scoreLabel = makeText("0", 60, 32, 30, "VT323", "black", 1)
+var scoreLabel = makeText("GAMEcanvasID", "0", 60, 32, 30, "VT323", "black", 1)
 var score = 0
 
 function updateScore() { 
@@ -189,6 +189,7 @@ function updateScore() {
 function  resetgame(){
   location.reload()
 }
+
 
 
 
@@ -215,13 +216,8 @@ function showCoords(event) {
     var x = event.clientX;
     var y = event.clientY;
     var coords = "X coords: " + x + ", Y coords: " + y;
-   var redcircle = document.createElementNS(namespace, "circle")
- redcircle.setAttribute("cx", x)
- redcircle.setAttribute("cy", y)
- redcircle.setAttribute("r", DOTSradius)
- redcircle.setAttribute("fill", DOTSpaint )
- redcircle.setAttribute("id", "redcircle")
- DOTScanvas.appendChild(redcircle)
+   var redcircle = makeCircle("DOTScanvasID", x, y, DOTSradius, DOTSpaint)
+    redcircle.setAttribute("id", "redcircle")
   }
 }
 function reload(){
@@ -340,21 +336,6 @@ function makePolygon(canvasID, points, fill, opacity) {
   var canvas = document.getElementById("canvas")
   canvas.appendChild(canvasID)
   return polygon
-}
-
-function makeText(canvasID, message, x, y, fontSize, fontFamily, fill, opacity) {
-  var text = document.createElementNS(namespace, "text")
-  text.innerHTML = message
-  text.setAttribute("x", x)
-  text.setAttribute("y", y)
-  text.setAttribute("font-size", fontSize)
-  text.setAttribute("font-family", fontFamily)
-  text.setAttribute("fill", fill)
-  text.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(text)
-  return text
 }
 
 function makeImage(canvasID, url, x, y, width, height, opacity) {
@@ -495,32 +476,9 @@ function move(shape, dx, dy) {
     setY(shape, y1 + dy)
   }
 }
-function makeCircle(canvasID, cx, cy, r, fill, opacity) {
-  var circle = document.createElementNS(namespace, "circle")
-  circle.setAttribute("cx", cx)
-  circle.setAttribute("cy", cy)
-  circle.setAttribute("r", r)
-  circle.setAttribute("fill", fill)
-  circle.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(circle)
-  return circle
-}
 
-function makeRect(canvasID, x, y, width, height, fill, opacity) {
-  var rect = document.createElementNS(namespace, "rect")
-  rect.setAttribute("x", x)
-  rect.setAttribute("y", y)
-  rect.setAttribute("width", width)
-  rect.setAttribute("height", height)
-  rect.setAttribute("fill", fill)
-  rect.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(rect)
-  return rect
-}
+
+
 
 function makeEllipse(canvasID, cx, cy, rx, ry, fill, opacity) {
   var ellipse = document.createElementNS(namespace, "ellipse")

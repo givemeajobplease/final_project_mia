@@ -1,5 +1,8 @@
 /*create comments with ctrl slash*/
 @import url('https://fonts.googleapis.com/css?family=VT323');
+body {
+    overflow:hidden;
+}
 /*HUB css*/
 #HUBtitle{
     display: block;
@@ -280,10 +283,7 @@ background-color: lightpink;
 
 
 /*GAME css*/
-  background: gray;
-}
-
-svg {
+#GAMEcanvasID {
   background-image: url("http://www.qotile.net/gif/static2.gif");
   display: block;
   margin: auto;
