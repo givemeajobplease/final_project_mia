@@ -220,7 +220,7 @@ function showCoords(event) {
     redcircle.setAttribute("id", "redcircle")
   }
 }
-function reload(){
+function reloaddots(){
   location.reload();
 }
 function  changetoblack(){
@@ -475,91 +475,6 @@ function move(shape, dx, dy) {
     setX(shape, x1 + dx)
     setY(shape, y1 + dy)
   }
-}
-
-
-
-
-function makeEllipse(canvasID, cx, cy, rx, ry, fill, opacity) {
-  var ellipse = document.createElementNS(namespace, "ellipse")
-  ellipse.setAttribute("cx", cx)
-  ellipse.setAttribute("cy", cy)
-  ellipse.setAttribute("rx", rx)
-  ellipse.setAttribute("ry", ry)
-  ellipse.setAttribute("fill", fill)
-  ellipse.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(ellipse)
-  return ellipse
-}
-
-function makeLine(canvasID, x1, y1, x2, y2, stroke, strokeWidth, opacity) {
-  var line = document.createElementNS(namespace, "line")
-  line.setAttribute("x1", x1)
-  line.setAttribute("y1", y1)
-  line.setAttribute("x2", x2)
-  line.setAttribute("y2", y2)
-  line.setAttribute("stroke", stroke)
-  line.setAttribute("stroke-width", strokeWidth)
-  line.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(line)
-  return line
-}
-
-function makePolyline(canvasID, points, stroke, strokeWidth, opacity) {
-  var polyline = document.createElementNS(namespace, "polyline")
-  polyline.setAttribute("points", points)
-  polyline.setAttribute("stroke", stroke)
-  polyline.setAttribute("stroke-width", strokeWidth)
-  polyline.setAttribute("opacity", opacity)
-  polyline.setAttribute("fill", "none")
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(polyline)
-  return polyline
-}
-
-function makePolygon(canvasID, points, fill, opacity) {
-  var polygon = document.createElementNS(namespace, "polygon")
-  polygon.setAttribute("points", points)
-  polygon.setAttribute("opacity", opacity)
-  polygon.setAttribute("fill", fill)
-  
-  var canvas = document.getElementById("canvas")
-  canvas.appendChild(canvasID)
-  return polygon
-}
-
-function makeText(canvasID, message, x, y, fontSize, fontFamily, fill, opacity) {
-  var text = document.createElementNS(namespace, "text")
-  text.innerHTML = message
-  text.setAttribute("x", x)
-  text.setAttribute("y", y)
-  text.setAttribute("font-size", fontSize)
-  text.setAttribute("font-family", fontFamily)
-  text.setAttribute("fill", fill)
-  text.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(text)
-  return text
-}
-
-function makeImage(canvasID, url, x, y, width, height, opacity) {
-  var image = document.createElementNS(namespace, "image")
-  image.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", url)
-  image.setAttribute("x", x)
-  image.setAttribute("y", y)
-  image.setAttribute("width", width)
-  image.setAttribute("height", height)
-  image.setAttribute("opacity", opacity)
-  
-  var canvas = document.getElementById(canvasID)
-  canvas.appendChild(image)
-  return image
 }
 
 function collides(shape1, shape2) {
