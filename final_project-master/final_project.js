@@ -338,6 +338,21 @@ function makePolygon(canvasID, points, fill, opacity) {
   return polygon
 }
 
+function makeText(canvasID, message, x, y, fontSize, fontFamily, fill, opacity) {
+  var text = document.createElementNS(namespace, "text")
+  text.innerHTML = message
+  text.setAttribute("x", x)
+  text.setAttribute("y", y)
+  text.setAttribute("font-size", fontSize)
+  text.setAttribute("font-family", fontFamily)
+  text.setAttribute("fill", fill)
+  text.setAttribute("opacity", opacity)
+  
+  var canvas = document.getElementById(canvasID)
+  canvas.appendChild(text)
+  return text
+}
+
 function makeImage(canvasID, url, x, y, width, height, opacity) {
   var image = document.createElementNS(namespace, "image")
   image.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", url)
@@ -351,7 +366,6 @@ function makeImage(canvasID, url, x, y, width, height, opacity) {
   canvas.appendChild(image)
   return image
 }
-
 
 
 
