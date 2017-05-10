@@ -65,10 +65,12 @@ STAMPheight = STAMPheight+13
 
 //for game
 function changecolorGAME(){
-    document.querySelector("body").setAttribute("style", "background-color: black;")
+    document.querySelector("body").setAttribute("style", "background-color: gold;")
 }
 var namespace = "http://www.w3.org/2000/svg"
+
  var GAMEcanvas = document.getElementById("GAMEcanvasID")
+ if (GAMEcanvas) {
 var ob1 = makeRect("GAMEcanvasID", 100, 170, 30, 70, "#3D3D3D", 1)
 var ob2 = makeRect("GAMEcanvasID", 30, 0, 30, 70, "#3D3D3D", 1)
 var ob3 = makeRect("GAMEcanvasID", 220, 130, 30, 100, "#3D3D3D", 1)
@@ -82,6 +84,7 @@ var turnedoff = "false"
   document.getElementById("directions").setAttribute("style", "display: inline;")
 document.getElementById("endbutton").setAttribute("style", "display: none;")
 document.getElementById("gameover").setAttribute("style", "display: none;")
+ }
 function starttime(){
   startscreen.setAttribute("fill", "none")
   mainloop()
@@ -177,8 +180,10 @@ document.getElementById("scorelabel").setAttribute("style", "display: none;")
   //variable
   turnedoff = "true"
 }
+if (GAMEcanvas) {
 var scoreLabel = makeText("GAMEcanvasID", "0", 60, 32, 30, "VT323", "black", 1)
 var score = 0
+}
 
 function updateScore() { 
   if (turnedoff == "false"){
