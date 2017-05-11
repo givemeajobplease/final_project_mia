@@ -64,9 +64,6 @@ STAMPheight = STAMPheight+13
 }
 
 //for game
-function changecolorGAME(){
-    document.querySelector("body").setAttribute("style", "background-color: gold;")
-}
 var namespace = "http://www.w3.org/2000/svg"
 
  var GAMEcanvas = document.getElementById("GAMEcanvasID")
@@ -200,9 +197,6 @@ function  resetgame(){
 
 
 //for dots
-function changecolorDOTS(){
-    document.querySelector("body").setAttribute("style", "background-color: lightpink;")
-}
 var namespace = "http://www.w3.org/2000/svg"
  var DOTScanvas = document.getElementById("DOTScanvasID")
 var blackclick = "false"
