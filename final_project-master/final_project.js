@@ -5,9 +5,6 @@ var cheese = 1
 
 
 //for stamp
-function changecolorSTAMP(){
-    document.querySelector("body").setAttribute("style", "background-color: lightgreen;")
-}
 var namespace = "http://www.w3.org/2000/svg"
  var STAMPcanvas = document.getElementById("STAMPcanvasID")
 var STAMPblackclick = "false"
@@ -201,7 +198,7 @@ var namespace = "http://www.w3.org/2000/svg"
  var DOTScanvas = document.getElementById("DOTScanvasID")
 var blackclick = "false"
 var redclick = "true"
-var DOTSpaint = "red"
+var DOTSpaint = "black"
 var DOTSradius = 15
 var mousedown = false
 function downclick(){
