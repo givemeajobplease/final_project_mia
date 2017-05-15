@@ -63,6 +63,7 @@ STAMPheight = STAMPheight+13
 //for game
 var namespace = "http://www.w3.org/2000/svg"
 
+
  var GAMEcanvas = document.getElementById("GAMEcanvasID")
  if (GAMEcanvas) {
 var ob1 = makeRect("GAMEcanvasID", 100, 170, 30, 70, "#3D3D3D", 1)
@@ -70,7 +71,7 @@ var ob2 = makeRect("GAMEcanvasID", 30, 0, 30, 70, "#3D3D3D", 1)
 var ob3 = makeRect("GAMEcanvasID", 220, 130, 30, 100, "#3D3D3D", 1)
 var ob4 = makeRect("GAMEcanvasID", 250, 0, 30, 50, "#3D3D3D", 1)
 var ob5 = makeRect("GAMEcanvasID", 150, 0, 30, 90, "#3D3D3D", 1)
-var startscreen = makeRect("GAMEcanvasID", 0,0,1500,600, "black", 1)
+var startscreen = makeRect("GAMEcanvasID", 0,0,1500,600, "lightcoral", 1)
 var turnedoff = "false"
 
   var chara = makeImage("GAMEcanvasID", "http://www.clipartbest.com/cliparts/pT5/6o6/pT56o6M8c.gif", 0, 170, 30, 30, 1)
@@ -154,7 +155,7 @@ function jump(event) {
  }
 }
 function turnoff(){
-  startscreen.setAttribute("style", "fill: red;")
+  startscreen.setAttribute("style", "fill: lightcoral;")
 document.getElementById("endbutton").setAttribute("style", "display: inline;")
 document.getElementById("gameover").setAttribute("style", "display: inline;")
  chara.setAttribute("opacity", "0")

@@ -812,10 +812,13 @@ background-color: coral;
 
 /*GAME css*/
 #gamebody{
-background-color: coral
+background-color: coral;
+    
 }
 #GAMEcanvasID {
-  background-image: url("http://www.qotile.net/gif/static2.gif");
+  background-image: url("https://cdn.dribbble.com/users/375867/screenshots/1480136/game-assets-game-background-sidescroller.png");
+  background-repeat: no-repeat;
+background-size: cover;
   display: block;
   margin: auto;
   border-style: solid;
